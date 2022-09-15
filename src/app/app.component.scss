@@ -1,0 +1,17 @@
+.ca{
+    &-wrapper{
+        width: 100%;
+        min-height: 100vh;
+
+        &__content{
+            width: 100%;
+            padding: 20px;
+            min-height: 100vh;
+        }
+    }
+
+    &-sidenav{
+        width: 100%;
+        max-width: 200px;
+    }
+}
