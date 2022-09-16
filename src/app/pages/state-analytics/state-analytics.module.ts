@@ -4,6 +4,7 @@ import { StateAnalyticsRoutingModule } from './state-analytics-routing.module';
 import { StateAnalyticsComponent } from './state-analytics.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { PipesModule } from 'app/pipes/pipes.module';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PipesModule } from 'app/pipes/pipes.module';
     StateAnalyticsRoutingModule,
     MatSelectModule,
     MatTableModule,
-    PipesModule
+    PipesModule,
+    MatPaginatorModule
   ]
 })
 export class StateAnalyticsModule { }

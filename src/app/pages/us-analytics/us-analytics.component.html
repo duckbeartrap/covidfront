@@ -63,3 +63,11 @@
     <tr mat-header-row *matHeaderRowDef="columns"></tr>
     <tr mat-row *matRowDef="let row; columns: columns;"></tr>
   </table>
+  <mat-paginator 
+    [pageSize]="pagination.pageSize"
+    [pageIndex]="pagination.pageIndex"
+    [length]="pagination.length"
+    showFirstLastButtons 
+    hideLength="true"
+    (page)="changePage($event)">
+  </mat-paginator>

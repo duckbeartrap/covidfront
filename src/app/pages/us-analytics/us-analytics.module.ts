@@ -4,6 +4,7 @@ import { UsAnalyticsRoutingModule } from './us-analytics-routing.module';
 import { UsAnalyticsComponent } from './us-analytics.component';
 import { MatTableModule } from '@angular/material/table';
 import { PipesModule } from 'app/pipes/pipes.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PipesModule } from 'app/pipes/pipes.module';
     CommonModule,
     UsAnalyticsRoutingModule,
     MatTableModule,
-    PipesModule
+    PipesModule,
+    MatPaginatorModule
   ]
 })
 export class UsAnalyticsModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from '@services';
-import { Analytics } from '@interfaces';
+import { Analytics, Pagination } from '@interfaces';
 import { Observable } from 'rxjs';
 import { STATES } from '../../../assets/static/states';
 
@@ -34,7 +34,15 @@ export class StateAnalyticsComponent implements OnInit {
     'onVent',
     'outcomes',
     'totalTestResults'
-  ]
+  ];
+
+  pagination: Pagination = {
+    pageIndex: 0,
+    pageSize: 30,
+    length: 100
+  }
+
+  selectedStateCode: string;
 
   constructor(private analyticsService: AnalyticsService) { }
 
@@ -42,7 +50,17 @@ export class StateAnalyticsComponent implements OnInit {
   }
 
   updateState(event){
-    this.data$ = this.analyticsService.getState(event.value.toLowerCase());
+    this.pagination = {
+      pageIndex: 0,
+      pageSize: 30,
+      length: 100
+    }
+    this.selectedStateCode = event.value.toLowerCase()
+    this.data$ = this.analyticsService.getState(this.selectedStateCode, this.pagination, true);
   }
 
+  changePage(event?: Pagination){
+    this.pagination = event || this.pagination;
+    this.data$ = this.analyticsService.getState(this.selectedStateCode, this.pagination);
+  }
 }
